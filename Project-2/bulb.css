@@ -1,0 +1,27 @@
+body {
+    background-color: bisque;
+}
+
+.contaner {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 500px;
+
+}
+
+#circule {
+    background-color: white;
+    height: 305px;
+    width: 300px;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 300px;
+    margin-top: -200px;
+}
+
+button {
+    cursor: pointer;
+}
