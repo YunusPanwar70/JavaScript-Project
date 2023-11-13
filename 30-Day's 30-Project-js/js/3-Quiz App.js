@@ -1,52 +1,48 @@
 const question = [{
-        question: " Which is larget animal in the world?",
+        question: "Which is larget animal in the world?",
         answer: [
             { text: "Shark", correct: false },
-            { text: "Blue Whale", correct: ture },
+            { text: "Blue Wale", correct: true },
             { text: "Elephant", correct: false },
             { text: "Giraffe", correct: false },
         ]
     },
     {
-        question: "Which is the smallest contry in the world?",
+        question: "Which is the smallest country in the world?",
         answer: [
             { text: "Vatican City", correct: true },
             { text: "Bhutan", correct: false },
             { text: "Nepal", correct: false },
-            { text: "Shir Lanka", correct: false },
+            { text: "Shri Lanka", correct: false },
         ]
     },
 
     {
-        question: "Which is the largest desert in the world?",
+        question: "WHich is the largest desert in the world?",
         answer: [
             { text: "Kalahari", correct: false },
             { text: "Gobi", correct: false },
             { text: "Sahara", correct: false },
-            { text: "Antactica", correct: true },
+            { text: "Antarctia", correct: true },
         ]
     },
-    {
 
-        question: "Which is the smallest continent in the world?",
+    {
+        question: "Which is the Smallest continent in the world?",
         answer: [
             { text: "Asia", correct: false },
             { text: "Australia", correct: true },
             { text: "Arctic", correct: false },
             { text: "Africa", correct: false },
-
         ]
-    },
+    }
 ];
 
-const questionElement = document.getElementById("question");
-
-const answerButton = document.getElementById("answer-buttons");
-
+const questionELement = document.getElementById("question");
+const answerButton = document.getElementById("answer-button");
 const nextButton = document.getElementById("next-btn");
 
-let cureentQuestionIndex = 0;
-
+let currentQuestionIndex = 0;
 let score = 0;
 
 function startQuiz() {
@@ -57,16 +53,16 @@ function startQuiz() {
 }
 
 function showQuestion() {
-    let currentQuestion = question[cureentQuestionIndex];
-    let questionNo = cureentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+    let currentQuestion = question[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionELement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    cureentQuestion.answer.forEach(answer => {
+    currentQuestion.answer.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn")
-        answerButton.appendChild(button);
-    });
-};
+        answerButton.appendChild(button)
+    })
+}
 
 startQuiz();

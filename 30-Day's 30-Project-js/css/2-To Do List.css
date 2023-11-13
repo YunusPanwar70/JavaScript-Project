@@ -12,9 +12,6 @@
     padding: 10px;
 }
 
-
-/* Todo-app */
-
 .todo-app {
     width: 100%;
     max-width: 540px;
@@ -64,13 +61,10 @@ button {
     padding: 16px 50px;
     background: #ff5945;
     color: #fff;
-    font-size: 16px;
+    font-style: 16px;
     cursor: pointer;
     border-radius: 40px;
 }
-
-
-/* Ul & li */
 
 ul li {
     list-style: none;
@@ -113,7 +107,7 @@ ul li span {
     color: #555;
     line-height: 40px;
     text-align: center;
-    border-radius: 15%;
+    border-radius: 50%;
 }
 
 ul li span:hover {

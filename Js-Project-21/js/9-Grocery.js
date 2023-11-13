@@ -15,7 +15,7 @@ userInput.addEventListener("keydown", (event) => {
 
 function addItem() {
     let h2 = document.createElement("h2");
-    h2.innerHTML = "- " + userInput.value;
+    h2.innerHTML = "<del>" + userInput.value + "</del>";
 
     h2.addEventListener("click", () => {
         h2.style.textDecoration = "line-through";
