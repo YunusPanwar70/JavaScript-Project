@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu</title>
+    <link rel="stylesheet" href="../css/1-Dropdown Menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-ezoxpOpFwZFUwWz6e8/2XPpLUElZM6aY8V59DIeDVM3utG9i+TkR94vIUMzIa7xj" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="dropdown">
+            <input type="text" class="text-box" placeholder="Select On" readonly>
+            <div class="options">
+                <div id="click" onclick="show('HTML')"><i class="fa-brands fa-html5"></i>HTML</div>
+                <div id="click" onclick="show('CSS')"><i class="fa-brands fa-css3-alt"></i>CSS</div>
+                <div id="click" onclick="show('JavaScript')"><i class="fa-brands fa-square-js"></i>JavaScript</div>
+                <div id="click" onclick="show('Angular')"><i class="fa-brands fa-angular"></i>Angular</div>
+                <div id="click" onclick="show('React')"><i class="fa-brands fa-react"></i>React</div>
+                <div id="click" onclick="show('Vue')"><i class="fa-brands fa-vuejs"></i>Vue</div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/1-Dropdown Menu.js"></script>
+</body>
+
+</html>

@@ -1,10 +1,11 @@
 * {
-    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
 }
 
 body {
-    font-family: 'Segoe UI';
     display: grid;
     place-items: center;
     height: 100vh;
@@ -15,9 +16,7 @@ body {
     text-align: center;
 }
 
-li {
-    padding: 20px;
-    font-size: xx-large;
+button {
     cursor: pointer;
 }
 
