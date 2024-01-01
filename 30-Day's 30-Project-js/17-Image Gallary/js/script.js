@@ -1,18 +1,19 @@
-let scrollContain = document.querySelector(".gallary");
+let scrollContainer = document.querySelector(".gallery");
 let backBtn = document.getElementById("backBtn");
 let nextBtn = document.getElementById("nextBtn");
 
-scrollContain.addEventListener("wheel", (evt) => {
+scrollContainer.addEventListener("wheel", function(evt) {
     evt.preventDefault();
-    scrollContain.scrollLeft += evt.deltaY;
-    scrollContain.style.scrollBehavior = "auto";
-})
+    scrollContainer.scrollLeft += evt.deltaY;
+    scrollContainer.style.scrollBehavior = "auto";
+});
+
 nextBtn.addEventListener("click", () => {
-    scrollContain.style.scrollBehavior = "smooth";
-    scrollContain.scrollLeft += 900;
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += 900;
 });
 
 backBtn.addEventListener("click", () => {
-    scrollContain.style.scrollBehavior = "smooth";
-    scrollContain.scrollLeft -= 900;
+    scrollContainer.style.scrollBehavior = "smooth";
+    scrollContainer.scrollLeft += -900;
 });
