@@ -1,0 +1,16 @@
+.flexContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin-left: 5%;
+    margin-right: 5%;
+    list-style: none;
+}
+
+.flex-item {
+    background-color: #eee;
+    padding: 25px;
+    width: 20%;
+    height: 150px;
+    margin-top: 10px;
+}
