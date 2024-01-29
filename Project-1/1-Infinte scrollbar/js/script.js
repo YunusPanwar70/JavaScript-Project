@@ -1,38 +1,39 @@
-window.addEventListener('DOMContentLoaded', function() {
-    let flexContainer = document.getElementsByClassName('flexContainer')[0];
-    let numberOfImg = 4;
+const container = document.getElementById('container');
 
-    function createList() {
-        let li = document.createElement('li');
-        li.className = 'flex-item'
-        let img = new Image();
-        img.src = '#';
-        img.alt = 'Unknow Source'
+function createRow() {
+    const ul = document.createElement('ul');
+    ul.classList.add('flex');
 
-        li.append(img);
-        return li
+    for (let i = 0; i < 4; i++) {
+        const currentColumn = createColumn();
+        ul.append(currentColumn);
     }
+    container.append(ul);
+    // return ul;
+}
 
-    function addList(totalList) {
-        let fragment = new DocumentFragment();
-        for (let i = 0; i < totalList; i++) {
-            fragment.append(createList());
-        }
-        flexContainer.append(fragment);
+function createColumn() {
+    const li = document.createElement('li');
+
+    let img = new Image();
+    img.src = '#';
+    img.alt = 'unknown img';
+    li.appendChild(img);
+
+    return li;
+}
+createRow();
+
+while (this.pageYOffset >= document.body.offsetHeight - window.innerHeight) {
+    createRow();
+}
+
+window.addEventListener("scroll", function () {
+    const totalHeight = document.body.offsetHeight - this.window.innerHeight;
+    const currentPosition = this.pageYOffset;
+
+    if (currentPosition > totalHeight) {
+        createRow();
+
     }
-
-    addList(numberOfImg);
-
-    while (this.pageYOffset >= document.body.offsetHeight - window.innerHeight) {
-        addList(numberOfImg);
-    }
-
-    window.addEventListener('scroll', function() {
-        let totalheight = document.body.offsetHeight - window.innerHeight;
-        let currentPosition = this.pageYOffset;
-
-        if (currentPosition > totalheight) {
-            addList(numberOfImg)
-        };
-    });
-});
+})
