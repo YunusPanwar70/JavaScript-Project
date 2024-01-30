@@ -19,7 +19,8 @@
                 <!-- 2 Button-->
                 <div>
                     <input type="button" name="" id="" value="AC" onclick="display.value = '' " class="operator">
-                    <input type="button" name="" id="" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
+                    <input type="button" name="" id="" value="DE"
+                        onclick="display.value = display.value.toString().slice(0,-1)" class="operator">
                     <input type="button" name="" id="" value="." onclick="display.value += '.'" class="operator">
                     <input type="button" name="" id="" value="/" onclick="display.value += '/'" class="operator">
                 </div>
@@ -48,7 +49,8 @@
                 <div>
                     <input type="button" name="" id="" value="00" onclick="display.value += '00'">
                     <input type="button" name="" id="" value="0" onclick="display.value  += '0'">
-                    <input type="button" name="" id="" value="=" onclick="display.value = eval(display.value)" class="equal" class="operator">
+                    <input type="button" name="" id="" value="=" onclick="display.value = eval(display.value)"
+                        class="equal" class="operator">
                 </div>
             </form>
         </div>
