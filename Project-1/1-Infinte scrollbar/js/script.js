@@ -9,7 +9,6 @@ function createRow() {
         ul.append(currentColumn);
     }
     container.append(ul);
-    // return ul;
 }
 
 function createColumn() {
@@ -22,18 +21,16 @@ function createColumn() {
 
     return li;
 }
-createRow();
 
 while (this.pageYOffset >= document.body.offsetHeight - window.innerHeight) {
     createRow();
 }
 
-window.addEventListener("scroll", function () {
+window.addEventListener('scroll', function () {
     const totalHeight = document.body.offsetHeight - this.window.innerHeight;
     const currentPosition = this.pageYOffset;
 
     if (currentPosition > totalHeight) {
         createRow();
-
     }
 })

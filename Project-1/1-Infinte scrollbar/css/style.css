@@ -6,14 +6,12 @@ h1 {
     display: grid;
     grid-gap: 10px;
     flex-flow: column;
-    flex-flow: column;
     justify-content: space-between;
 }
 
 .flex {
     display: flex;
     flex: row;
-    background-color: #eee;
     justify-content: space-between;
     list-style: none;
     margin-left: 5%;
@@ -22,6 +20,10 @@ h1 {
     height: 150px;
 }
 
-li{
+li {
+    background-color: #eee;
+}
+.flex ul li img {
     gap: 10px;
+    justify-content: space-between;
 }
