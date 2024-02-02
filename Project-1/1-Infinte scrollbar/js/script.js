@@ -1,36 +1,30 @@
 const container = document.getElementById('container');
 
-function createRow() {
+function createRowAndColums() {
     const ul = document.createElement('ul');
     ul.classList.add('flex');
 
     for (let i = 0; i < 4; i++) {
-        const currentColumn = createColumn();
-        ul.append(currentColumn);
+        const li = document.createElement('li');
+        let img = new Image();
+        img.src = '#';
+        img.alt = 'unknown img';
+        ul.appendChild(li);
+        li.appendChild(img);
     }
-    container.append(ul);
+    container.appendChild(ul);
 }
 
-function createColumn() {
-    const li = document.createElement('li');
-
-    let img = new Image();
-    img.src = '#';
-    img.alt = 'unknown img';
-    li.appendChild(img);
-
-    return li;
-}
-
-while (this.pageYOffset >= document.body.offsetHeight - window.innerHeight) {
-    createRow();
-}
-
-window.addEventListener('scroll', function () {
-    const totalHeight = document.body.offsetHeight - this.window.innerHeight;
-    const currentPosition = this.pageYOffset;
+function handelScroll() {
+    const totalHeight = document.body.offsetHeight - window.innerHeight;
+    const currentPosition = window.pageYOffset;
 
     if (currentPosition > totalHeight) {
-        createRow();
+        createRowAndColums();
     }
-})
+}
+while (this.pageYOffset >= document.body.offsetHeight - window.innerHeight) {
+    createRowAndColums();
+}
+
+window.addEventListener('scroll', handelScroll);
