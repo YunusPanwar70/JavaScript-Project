@@ -2,13 +2,6 @@ h1 {
     text-align: center;
 }
 
-.container {
-    display: grid;
-    grid-gap: 10px;
-    flex-flow: column;
-    justify-content: space-between;
-}
-
 .flex {
     display: flex;
     flex: row;
@@ -21,9 +14,8 @@ h1 {
 }
 
 li {
+    height: 150px;
+    width: 150px;
     background-color: #eee;
-}
-.flex ul li img {
-    gap: 10px;
-    justify-content: space-between;
+    text-align: center;
 }
