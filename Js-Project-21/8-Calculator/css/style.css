@@ -4,7 +4,6 @@ body {
 }
 
 .container {
-    border: 1px solid black;
     width: 95%;
     height: 100vh;
     margin: auto;
@@ -14,7 +13,6 @@ body {
 }
 
 .calculator {
-    border: 1px solid black;
     width: 370px;
     margin: auto;
     border-radius: 2px;

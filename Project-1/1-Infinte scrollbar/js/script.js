@@ -17,7 +17,7 @@ function createRowAndColums() {
 
 function handelScroll() {
     const totalHeight = document.body.offsetHeight - window.innerHeight;
-    const currentPosition = window.pageYOffset;
+    const currentPosition = window.scrollY;
 
     if (currentPosition > totalHeight) {
         createRowAndColums();
