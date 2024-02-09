@@ -32,5 +32,5 @@ function handleButtons(e) {
 buttons.addEventListener('click', handleButtons);
 
 function isArithmeticSymbol(symbol) {
-    return ['+', '-', '*', '/'].includes(symbol);
+    return ['+', '-', '*', '/', '%', '.'].includes(symbol);
 }

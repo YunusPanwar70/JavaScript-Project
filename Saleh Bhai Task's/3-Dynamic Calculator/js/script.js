@@ -2,73 +2,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('container');
 
     function createDivInput() {
-        // Create Div & append in container 
         const div = document.createElement('div');
         container.appendChild(div);
-        // Create Div & append in div
+
         const input = document.createElement('input');
-        input.classList = 'inputBox';
+        input.classList.add('inputBox');
         div.appendChild(input);
     }
 
     createDivInput();
 
-    function createButton() {
+    function genrateButtons() {
         const btnDiv = document.createElement('div');
-        btnDiv.classList = 'btn';
+        btnDiv.classList.add('btn');
         container.appendChild(btnDiv);
 
-        const buttonLabels = ['AC', 'C', '%', '/'];
+        const buttonLabels = [
+            ['AC', 'DEL', '%', '/'],
+            ['7', '8', '9', '*'],
+            ['4', '5', '6', '-'],
+            ['1', '2', '3', '+'],
+            ['00', '.', '0', '=']
+        ];
 
-        for (let i = 0; i < 4; i++) {
-            let oneButton = document.createElement('button');
-            oneButton.classList.add('orangeColor');
-            oneButton.textContent = buttonLabels[i];
-            btnDiv.appendChild(oneButton);
-        }
+        buttonLabels.forEach((operator) => {
+            operator.forEach(singleOp => {
+                let buttons = document.createElement('button')
+                buttons.innerText = singleOp;
+                btnDiv.appendChild(buttons)
+            });
+        });
 
-        const buttonLabelsTwo = ['7', '8', '9', '*'];
-
-        for (let j = 0; j < 4; j++) {
-            let twoButton = document.createElement('button');
-            twoButton.textContent = buttonLabelsTwo[j];
-            btnDiv.appendChild(twoButton);
-        }
-
-        const buttonLabelsThree = ['4', '5', '6', '-'];
-
-        for (let k = 0; k < 4; k++) {
-            let threeButton = document.createElement('button');
-            threeButton.textContent = buttonLabelsThree[k];
-            btnDiv.appendChild(threeButton);
-        }
-
-        const buttonLabelsFour = ['1', '2', '3', '+'];
-
-        for (let l = 0; l < 4; l++) {
-            let fourButton = document.createElement('button');
-            fourButton.textContent = buttonLabelsFour[l];
-            btnDiv.appendChild(fourButton);
-        }
-
-        const buttonLabelsFive = ['00', '.', '0', '='];
-
-        for (let m = 0; m < 4; m++) {
-            let fiveButton = document.createElement('button');
-            fiveButton.textContent = buttonLabelsFive[m];
-            btnDiv.appendChild(fiveButton);
-        }
     }
+    genrateButtons();
+})
 
-    createButton();
-});
 
 document.addEventListener('click', handelButtons);
 
 function handelButtons(e) {
     e.preventDefault();
     const inputBox = document.querySelector('.inputBox');
-    const buttons = document.querySelectorAll('.btn button');
 
     if (e.target.tagName === 'BUTTON') {
         const buttonsText = e.target.innerText;
@@ -84,10 +58,10 @@ function handelButtons(e) {
             try {
                 inputBox.value = eval(inputBox.value);
             } catch (error) {
-                inputBox.value = 'Error';
+                inputBox.value = '';
             }
         } else {
-            const lastChar = inputBox.value[inputBox.value.length - 1]
+            const lastChar = inputBox.value[inputBox.value.length - 1];
             if (isArithmeticSymbol(lastChar) && isArithmeticSymbol(buttonsText)) {
                 inputBox.value = inputBox.value.slice(0, -1) + buttonsText;
             } else {
@@ -98,5 +72,5 @@ function handelButtons(e) {
 }
 
 function isArithmeticSymbol(symbol) {
-    return ['+', '-', '*', '/'].includes(symbol)
-}
+    return ['+', '-', '*', '/', '.', '%'].includes(symbol)
+};

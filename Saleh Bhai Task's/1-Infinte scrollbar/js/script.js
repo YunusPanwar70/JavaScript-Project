@@ -23,7 +23,7 @@ function handelScroll() {
         createRowAndColums();
     }
 }
-while (this.pageYOffset >= document.body.offsetHeight - window.innerHeight) {
+while (screenY >= document.body.offsetHeight - window.innerHeight) {
     createRowAndColums();
 }
 

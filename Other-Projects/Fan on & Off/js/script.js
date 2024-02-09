@@ -1,26 +1,33 @@
-let img = document.getElementById('fanImg');
+let fanImg = document.getElementById('fanImg');
 let fanOn = document.getElementById('fanOn');
 let fanOFF = document.getElementById('fanOFF');
 let one = document.getElementById('one');
 let two = document.getElementById('two');
 let three = document.getElementById('three');
 
-fanOn.addEventListener('click', function () {
-    img.style.animationDuration = '3s'; // Set animation duration to 3 seconds
-})
 
-fanOFF.addEventListener('click', function () {
-    img.style.animationDuration = '0s'; // Set animation duration to 0 seconds (pauses animation)
-})
+function fanIsOn() {
+    fanImg.style.animationDuration = '3s';
+}
 
-one.addEventListener('click', function () {
-    img.style.animationDuration = '1s'; // Set animation duration to 1 second
-})
+function fanIsOFF() {
+    fanImg.style.animationDuration = '0s';
+}
 
-two.addEventListener('click', function () {
-    img.style.animationDuration = '0.5s'; // Set animation duration to 0.5 seconds
-})
+function speedOne() {
+    fanImg.style.animationDuration = '1s';
+}
 
-three.addEventListener('click', function () {
-    img.style.animationDuration = '0.1s'; // Set animation duration to 0.1 seconds
-});
+function speedTwo() {
+    fanImg.style.animationDuration = '0.5s';
+}
+
+function speedThree() {
+    fanImg.style.animationDuration = '0.1s';
+}
+
+fanOn.addEventListener('click', fanIsOn);
+fanOFF.addEventListener('click', fanIsOFF);
+one.addEventListener('click', speedOne);
+two.addEventListener('click', speedTwo);
+three.addEventListener('click', speedThree);

@@ -4,7 +4,7 @@ let qrText = document.getElementById("qrText");
 
 let generateQR = document.getElementById("generateQR");
 
-generateQR.addEventListener("click", () => {
+function qrCode() {
     if (qrText.value.length > 0) {
         qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value;
         imgBox.classList.add("show-img")
@@ -14,4 +14,5 @@ generateQR.addEventListener("click", () => {
             qrText.classList.remove('error')
         }, 1000);
     }
-});
+}
+generateQR.addEventListener("click", qrCode);

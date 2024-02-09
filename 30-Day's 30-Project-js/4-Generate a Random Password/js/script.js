@@ -1,10 +1,8 @@
 // Password & Length
-
 const passwordBox = document.getElementById("password");
 const length = 12;
 
 // Symbol and Alphabet and Number and Character  
-
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const number = "0123456789";
@@ -13,8 +11,7 @@ const symbol = "@#$%^&*()_+~|}{[]></-=";
 const allChars = upperCase + lowerCase + number + symbol;
 
 // Create Password
-
-document.getElementById("btn").addEventListener("click", function createPassword() {
+function createPassword() {
     let password = "";
     password += upperCase[Math.floor(Math.random() * upperCase.length)];
     password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
@@ -25,11 +22,12 @@ document.getElementById("btn").addEventListener("click", function createPassword
         password += allChars[Math.floor(Math.random() * symbol.length)];
     }
     passwordBox.value = password;
-})
+}
+document.getElementById("btn").addEventListener("click", createPassword);
 
 // Copy Password
-
-document.getElementById("CopyPassword").addEventListener("click", function copyPassword() {
+function copyPassword() {
     passwordBox.select();
     document.execCommand("copy")
-})
+}
+document.getElementById("CopyPassword").addEventListener("click", copyPassword);
