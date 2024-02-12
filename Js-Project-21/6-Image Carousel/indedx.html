@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="image fade"></div>
+
+        <!-- 1 Image -->
+        <img src="./img/1-lamp.jpg" alt="Lamp Image">
+
+        <!-- 2 Image -->
+        <!-- <img src="./img/2-Yellow Car.jpg" alt=""> -->
+        <!-- 3 Image -->
+        <img src="./img/3-Silver Car.webp" alt="">
+        <!-- 4 Image -->
+        <img src="./img/4-White Car.jpeg" alt="">
+        <!-- 5 Image -->
+        <img src="./img/5-Black Car.jpg" alt="">
+        <!-- 6 Image -->
+        <img src="./img/6-Yellow Car.jpeg" alt="">
+        <!-- 7 Image -->
+        <img src="./img/7-Blue Car .jpeg" alt="">
+    </div>
+
+    <!-- Left Button -->
+    <i id="prev" onclick="show_image(-1)" class="fa-solid fa-chevron-left"></i>
+
+    <!-- Right Button -->
+    <i id="next" onclick="show_image(1)" class="fa-solid fa-chevron-right"></i>
+
+    <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

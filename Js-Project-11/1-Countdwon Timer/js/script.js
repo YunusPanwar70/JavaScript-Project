@@ -1,12 +1,6 @@
-const endDate = "23 October 4:05PM";
-
-document.getElementById("end-date").innerHTML = endDate;
-
-const inputs = document.getElementById("input");
-
-// const clock = () => {
-
-// }
+const endDate = "23 October 2024 16:05:00";
+const enddates = document.getElementById("end-date").innerHTML = endDate;
+const inputs = document.querySelectorAll(".col input");
 
 function clock() {
     const end = new Date(endDate);
@@ -15,7 +9,8 @@ function clock() {
     // Convert into days
     inputs[0].value = Math.floor(diff / 3600 / 24);
     inputs[1].value = Math.floor(diff / 3600) % 24;
-    inputs[1].Math.floor(diff / 60) % 60;
+    inputs[2].value = Math.floor(diff / 60) % 60;
+    inputs[3].value = Math.floor(diff % 60);
 }
 
-clock();
+setInterval(clock, 1000); // Update every second

@@ -1,15 +1,16 @@
+// Get input & buttons
 const inputBox = document.getElementById('inputBox');
 const buttons = document.getElementById('btn');
-
+let zeroFixed = 0;
 function handleButtons(e) {
     if (e.target.tagName === 'BUTTON') {
         const buttonText = e.target.innerText;
 
-        if (buttonText === 'AC') {
-            inputBox.value = '';
-        } else if (buttonText === 'C') {
+        if (buttonText === 'AC') { // Click AC to remove all value's
+            inputBox.value = zeroFixed;
+        } else if (buttonText === 'C') { // Click C to remove One by One value's
             inputBox.value = inputBox.value.slice(0, -1);
-        } else if (buttonText === '=') {
+        } else if (buttonText === '=') { // Click = to sovle all arithmetic perfomance value's
             if (inputBox.value === '') {
                 return;
             }
