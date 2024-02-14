@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     createDivInput();
 
-    function genrateButtons() {
+    function generateButtons() {
         const btnDiv = document.createElement('div');
         btnDiv.classList.add('btn');
         container.appendChild(btnDiv);
@@ -34,43 +34,51 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     }
-    genrateButtons();
-})
+    generateButtons();
+});
 
 
-document.addEventListener('click', handelButtons);
-
-function handelButtons(e) {
-    e.preventDefault();
-    const inputBox = document.querySelector('.inputBox');
-
+let zeroFixed = '0';
+function handleButtons(e) {
     if (e.target.tagName === 'BUTTON') {
-        const buttonsText = e.target.innerText;
+        const buttonText = e.target.innerText;
+        let currentVal = document.querySelector('.inputBox').value;
+        switch (buttonText) {
+            case 'AC':
+                currentVal = zeroFixed;
+                break;
 
-        if (buttonsText === 'AC') {
-            inputBox.value = '';
-        } else if (buttonsText === 'C') {
-            inputBox.value = inputBox.value.slice(0, -1);
-        } else if (buttonsText === '=') {
-            if (inputBox.value === '') {
-                return;
-            }
-            try {
-                inputBox.value = eval(inputBox.value);
-            } catch (error) {
-                inputBox.value = '';
-            }
-        } else {
-            const lastChar = inputBox.value[inputBox.value.length - 1];
-            if (isArithmeticSymbol(lastChar) && isArithmeticSymbol(buttonsText)) {
-                inputBox.value = inputBox.value.slice(0, -1) + buttonsText;
-            } else {
-                inputBox.value += buttonsText;
-            }
+            case 'DEL':
+                currentVal = currentVal.length === 1 ? zeroFixed : currentVal.slice(0, -1);
+                break;
+
+            case '=':
+                if (currentVal === eval(currentVal)) {
+                    return;
+                } try {
+                    currentVal = eval(currentVal);
+                } catch (error) {
+                    currentVal = '';
+                }
+                break;
+            default:
+                const lastChar = currentVal[currentVal.length - 1];
+                if (isArithmeticSymbol(lastChar) && isArithmeticSymbol(buttonText)) {
+                    currentVal = currentVal.slice(0, -1) + buttonText
+                } else {
+                    if (currentVal.length === 1 && lastChar == 0 && !isArithmeticSymbol(buttonText)) {
+                        currentVal = buttonText;
+                    } else {
+                        currentVal += buttonText;
+                    }
+                }
+                break
         }
+        document.querySelector('.inputBox').value = currentVal;
     }
 }
+document.addEventListener('click', handleButtons);
 
 function isArithmeticSymbol(symbol) {
-    return ['+', '-', '*', '/', '.', '%'].includes(symbol)
-};
+    return ['+', '-', '*', '/', '%', '.'].includes(symbol);
+}

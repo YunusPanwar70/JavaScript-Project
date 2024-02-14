@@ -5,35 +5,41 @@ let zeroFixed = '0';
 function handleButtons(e) {
     if (e.target.tagName === 'BUTTON') {
         const buttonText = e.target.innerText;
-
+        let currentVal = inputBox.value;
         switch (buttonText) {
             case 'AC':
-                inputBox.value = zeroFixed;
+                currentVal = zeroFixed;
                 break;
             case 'C':
-                inputBox.value = inputBox.value.slice(0, -1);
+                currentVal = currentVal.length === 1 ? zeroFixed : currentVal.slice(0, -1);
                 break;
             case '=':
-                if (inputBox.value === eval(inputBox.value)) {
+                if (currentVal === eval(currentVal)) {
                     return;
                 }
                 try {
-                    inputBox.value = eval(inputBox.value);
+                    currentVal = eval(currentVal);
                 } catch (error) {
-                    inputBox.value = '';
+                    currentVal = '';
                 }
                 break;
             default:
-                const lastChar = inputBox.value[inputBox.value.length - 1];
+                const lastChar = currentVal[currentVal.length - 1];
                 if (isArithmeticSymbol(lastChar) && isArithmeticSymbol(buttonText)) {
-                    inputBox.value = inputBox.value.slice(0, -1) + buttonText;
+                    currentVal = currentVal.slice(0, -1) + buttonText;
                 } else {
-                    inputBox.value += buttonText;
+                    if (currentVal.length === 1 && lastChar == 0 && !isArithmeticSymbol(buttonText)) {
+                        currentVal = buttonText;
+                    } else {
+                        currentVal += buttonText;
+                    }
                 }
                 break;
         }
+        inputBox.value = currentVal;
     }
 }
+
 buttons.addEventListener('click', handleButtons);
 
 function isArithmeticSymbol(symbol) {
