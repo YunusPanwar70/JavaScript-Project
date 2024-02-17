@@ -3,6 +3,7 @@ const buttons = document.getElementById('btn');
 let zeroFixed = '0';
 
 function handleButtons(e) {
+    e.preventDefault();
     if (e.target.tagName === 'BUTTON') {
         const buttonText = e.target.innerText;
         let currentVal = inputBox.value;
@@ -44,4 +45,4 @@ buttons.addEventListener('click', handleButtons);
 
 function isArithmeticSymbol(symbol) {
     return ['+', '-', '*', '/', '%', '.'].includes(symbol);
-}
+};
