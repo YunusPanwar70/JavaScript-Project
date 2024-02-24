@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#container {
+    display: flex;
+}
+
+form {
+    margin: 50px;
+}
+
+input {
+    margin-right: 250px;
+}
+
+ul {
+    list-style: none;
+}
+li {
+    width: 100px;
+    height: 100px;
+    border: black;
+}

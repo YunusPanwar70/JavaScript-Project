@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table row</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        #container {
+            display: flex;
+        }
+
+        input {
+            margin: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script src="./js/2-script.js"></script>
+    <script>
+        function createForm() {
+            let form = document.createElement('form');
+            container.appendChild(form);
+
+            let inp = 4;
+
+            for (let i = 0; i < inp; i++) {
+                let input = document.createElement('input');
+                form.appendChild(input);
+            }
+        }
+        createForm();
+
+        function fillInput() {
+            let inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    return;
+                } else {
+                    createForm();
+                }
+            });
+        }
+
+        fillInput();
+    </script>
+</body>
+
+</html>
