@@ -1,8 +1,8 @@
-let pass = document.getElementById("password");
-let msg = document.getElementById("message");
-let str = document.getElementById("strength");
+const pass = document.getElementById("password");
+const msg = document.getElementById("message");
+const str = document.getElementById("strength");
 
-pass.addEventListener('input', () => {
+function password() {
     if (pass.value.length > 0) {
         msg.style.display = "block";
     } else {
@@ -21,4 +21,5 @@ pass.addEventListener('input', () => {
         pass.style.borderColor = "#26d730";
         msg.style.color = "##26d730";
     }
-});
+};
+pass.addEventListener('input', password);

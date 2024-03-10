@@ -1,3 +1,6 @@
+// Button
+const button = document.getElementById("btn");
+
 // Password & Length
 const passwordBox = document.getElementById("password");
 const length = 12;
@@ -23,7 +26,7 @@ function createPassword() {
     }
     passwordBox.value = password;
 }
-document.getElementById("btn").addEventListener("click", createPassword);
+button.addEventListener("click", createPassword);
 
 // Copy Password
 function copyPassword() {

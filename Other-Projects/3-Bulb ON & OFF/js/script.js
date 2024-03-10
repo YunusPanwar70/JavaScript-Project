@@ -1,11 +1,12 @@
 const bulb = document.getElementById('bulb');
-const on = document.getElementById('on');
-const off = document.getElementById('off');
+const buttonsContainer = document.querySelector('.content');
 
-function toggleBulb() {
-    const isOn = bulb.src.includes('on'); // Check if the bulb is currently on
-    bulb.src = isOn ? '../img/bulb-off.png' : '../img/bulb-on.png';
+function toggleBulb(event) {
+    if (event.target.id === 'on') {
+        bulb.src = './img/bulb-on.png';
+    } else if (event.target.id === 'off') {
+        bulb.src = './img/bulb-off.png';
+    }
 }
 
-on.addEventListener('click', toggleBulb);
-off.addEventListener('click', toggleBulb);
+buttonsContainer.addEventListener('click', toggleBulb);

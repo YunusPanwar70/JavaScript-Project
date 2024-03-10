@@ -1,43 +1,42 @@
 const container = document.getElementById('container');
 const heading = ['Name', 'DOB', 'Age', 'Salary'];
 
-function createHeading() {
+function createHeadingAndContentediTable() {
     const ul = document.createElement('ul');
 
-    heading.forEach(head => {
+    heading.forEach(headName => {
         let li = document.createElement('li');
-        li.textContent = head;
+        li.textContent = headName;
         ul.appendChild(li);
     });
     container.appendChild(ul);
-};
-createHeading();
 
-function createrContentediTable() {
     const ul2 = document.createElement('ul');
-
     for (let i = 0; i < heading.length; i++) {
         let li2 = document.createElement('li');
         ul2.appendChild(li2);
         li2.setAttribute('contenteditable', 'true');
-        li2.addEventListener('keydown', function(enter) {
-            const keyCode = enter.keyCode || enter.which;
-            if (keyCode === 13) {
-                tableValue(enter);
-            };
-        });
-    };
+        li2.addEventListener('keydown', clickEnter);
+    }
     container.appendChild(ul2);
 };
-createrContentediTable();
-
+createHeadingAndContentediTable();
 
 function tableValue(e) {
     for (let j = 0; j < heading.length; j++) {
         let checkValues = e.target.parentElement.children[j].textContent;
-        if (checkValues === "") {
+        console.log(checkValues);
+        if (checkValues == "") {
             return;
-        };
+        } else {
+            createHeadingAndContentediTable();
+        }
     };
-    createrContentediTable();
+};
+
+function clickEnter(enter) {
+    const keyCode = enter.keyCode || enter.which;
+    if (keyCode === 13) {
+        tableValue(enter)
+    }
 };

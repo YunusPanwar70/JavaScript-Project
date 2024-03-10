@@ -1,8 +1,8 @@
-let imgBox = document.getElementById("imgBox");
-let qrImage = document.getElementById("qrImage");
-let qrText = document.getElementById("qrText");
+const imgBox = document.getElementById("imgBox");
+const qrImage = document.getElementById("qrImage");
+const qrText = document.getElementById("qrText");
 
-let generateQR = document.getElementById("generateQR");
+const generateQR = document.getElementById("generateQR");
 
 function qrCode() {
     if (qrText.value.length > 0) {
@@ -13,6 +13,13 @@ function qrCode() {
         setTimeout(() => {
             qrText.classList.remove('error')
         }, 1000);
-    }
-}
+    };
+};
 generateQR.addEventListener("click", qrCode);
+
+function handelKeyPress(e) {
+    if (e.key === 'Enter') {
+        qrCode();
+    };
+};
+qrText.addEventListener('keypress', handelKeyPress);
