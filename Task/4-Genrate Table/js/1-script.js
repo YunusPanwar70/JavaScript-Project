@@ -1,7 +1,6 @@
 const container = document.getElementById('container');
-const heading = ['Name', 'DOB', 'Age', 'Salary'];
 
-function createHeading() {
+function createHeading(heading) {
     const ul = document.createElement('ul');
     heading.forEach(headingName => {
         let li = document.createElement('li');
@@ -10,7 +9,7 @@ function createHeading() {
     });
     container.appendChild(ul);
 };
-createHeading();
+createHeading(['Name', 'DOB', 'Age', 'Salary']);
 
 function createContentEditableTable() {
     const ul2 = document.createElement('ul');

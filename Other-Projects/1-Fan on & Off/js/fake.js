@@ -1,9 +1,9 @@
-let fanImg = document.getElementById('fanImg');
-let fanOnButton = document.getElementById('fanOn');
-let fanOffButton = document.getElementById('fanOFF');
-let speedOne = document.getElementById('one');
-let speedTwo = document.getElementById('two');
-let speedThree = document.getElementById('three');
+const fanImg = document.getElementById('fanImg');
+const fanOnButton = document.getElementById('fanOn');
+const fanOffButton = document.getElementById('fanOFF');
+const speedOne = document.getElementById('one');
+const speedTwo = document.getElementById('two');
+const speedThree = document.getElementById('three');
 
 function fanIsOn(e) {
     if (e.target === fanOnButton) {
@@ -18,7 +18,6 @@ function fanIsOn(e) {
         fanImg.style.animationDuration = '0.1s';
     }
 }
-
 fanOnButton.addEventListener('click', fanIsOn);
 fanOffButton.addEventListener('click', fanIsOn);
 speedOne.addEventListener('click', fanIsOn);

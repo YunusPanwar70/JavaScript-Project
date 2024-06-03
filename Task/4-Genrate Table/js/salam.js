@@ -1,7 +1,6 @@
 const container = document.getElementById('container');
-const heading = ['Name', 'DOB', 'Age', 'Salary'];
 
-function createHeadings() {
+function createHeadings(heading) {
     let ul = document.createElement('ul');
     container.appendChild(ul);
     heading.forEach(head => {
@@ -10,7 +9,7 @@ function createHeadings() {
         ul.appendChild(li);
     });
 };
-createHeadings();
+createHeadings(['Name', 'DOB', 'Age', 'Salary']);
 
 function createContenetEditAble() {
     let ul = document.createElement('ul');
@@ -50,7 +49,7 @@ function removeLast(e) {
         }
     };
     for (const data of checkBox) {
-        if(data.textContent === "" && allEmpty === true){
+        if (data.textContent === "" && allEmpty === true) {
             container.removeChild(container.lastElementChild)
             for (let j = 0; j < checkBox.length; j++) {
                 checkBox[j].removeEventListener('input', removeLast);
