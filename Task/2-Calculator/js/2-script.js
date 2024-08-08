@@ -40,7 +40,6 @@ function handleButtons(e) {
         inputBox.value = currentVal;
     }
 }
-
 buttons.addEventListener('click', handleButtons);
 
 function isArithmeticSymbol(symbol) {
