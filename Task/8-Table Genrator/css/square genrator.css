@@ -45,7 +45,7 @@ button:hover {
     background-color: #ddd;
 }
 
-#table {
+#square {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,10 +64,4 @@ button:hover {
 
 p {
     padding: 20px;
-}
-
-.one {
-    background-color: black;
-    border: 2px solid white;
-    color: white;
 }

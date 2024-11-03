@@ -9,14 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
         input.classList.add('inputBox');
         div.appendChild(input);
     }
-
     createDivInput();
 
     function generateButtons() {
         const btnDiv = document.createElement('div');
         btnDiv.classList.add('btn');
         container.appendChild(btnDiv);
-
         const buttonLabels = [
             ['AC', 'DEL', '%', '/'],
             ['7', '8', '9', '*'],

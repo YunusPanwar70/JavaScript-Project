@@ -7,10 +7,6 @@ function tableGenrator(e) {
         alert('Please enter a number')
     }
 
-    let table = [];
-    for (let i = 1; i <= 10; i++) {
-        table.push(n * i)
-    }
     pera.innerHTML = table.join('<br>')
 }
 input.addEventListener('input', tableGenrator);

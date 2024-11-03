@@ -3,31 +3,36 @@ const formatBtns = document.querySelectorAll(".btn");
 const output = document.getElementById('output');
 
 function handleButtons(e) {
-    e.preventDefault();
-    let action = e.target.id;
-    let text = input.value;
+    e.preventDefault()
+    let { id } = e.target;
 
-    switch (action) {
+    switch (id) {
         case 'upperCase':
-            output.textContent = text.toUpperCase();
+            output.textContent = output.toUpperCase();
             break;
         case 'lowerCase':
-            output.textContent = text.toLowerCase();
+            output.textContent = output.toLowerCase();
             break;
         case 'capital':
-            output.textContent = text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+            output.textContent = output.innerText.trim()
+                .split(" ")
+                .map(
+                    (elem) =>
+                        elem.charAt(0).toUpperCase() + elem.slice(1).toLowerCase()
+                )
+                .join(" ");
             break;
         case 'bold':
-            output.innerHTML = `<b>${text}</b>`;
+            output.innerHTML = `<b>${output.innerText}</b>`;
             break;
         case 'italic':
-            output.innerHTML = `<i>${text}</i>`;
+            output.innerHTML = `<i>${output.innerText}</i>`;
             break;
         case 'underLine':
-            output.innerHTML = `<u>${text}</u>`;
+            output.innerHTML = `<u>${output.innerText}</u>`;
             break;
         default:
-            output.textContent = text;
+            output.textContent = output.innerText;
             break;
     }
 }
@@ -36,9 +41,8 @@ formatBtns.forEach(btn => {
     btn.addEventListener('click', handleButtons);
 });
 
-function textShow(e) {
-    e.preventDefault();
-    let text = input.value;
-    output.textContent = text;
+function textShow() {
+    let text = input.value.trim();
+    output.innerText = text;
 }
 input.addEventListener('input', textShow);
